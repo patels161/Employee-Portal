@@ -1,0 +1,32 @@
+
+    <div class="container" ng-controller="addCtrl">
+        <h2>Add New Employee</h2>
+        <form class="col-sm-6">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="eid">Id:</label><br>
+                <input type="text" class="form-control col-sm-6" id="eid" placeholder="Enter id" ng-model="user.id" required>
+                {{user.id}}
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="ename">Name:</label><br>         
+                <input type="text" class="form-control" id="ename" placeholder="Enter name" ng-model="user.name" required>
+                {{user.name}}
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="bdate">Birth Date:</label><br>         
+                <input type="date" class="form-control" id="bdate" placeholder="Enter birthdate" ng-model="user.birthdate" required>
+                {{birthdate}}
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="age">Age:</label><br>
+                <input type="number" class="form-control" id="age" placeholder="Enter age" ng-model="user.age" required>             
+                {{age}}
+            </div>
+            <div class="form-group">        
+               
+                <input type="button" class="btn btn-default" ng-click="addRow()" value="Save">
+            </div>
+            </form>
+    </div>
+    
+    

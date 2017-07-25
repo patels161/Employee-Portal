@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Employee Assignment</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body ng-app="myapp" class="container">
+        <header>
+            <center><h1>Employee Search</h1></center>
+        <div id="header">
+            <ul class="nav nav-tabs">
+                <li><a href="#!tab1">Home</a></li>
+                <li><a href="#!tab2">Login</a></li>
+                <li><a href="#!tab3">Employee List</a></li>
+            </ul>
+        </div>
+        </header>
+        <section>
+            <div ng-view></div>
+        </section>
+        <footer>
+            <br><center>Copyright By Abc Data. All Rights Reserved.</center>
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

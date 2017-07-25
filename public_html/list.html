@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<br>
+<div class="container" ng-controller="mainCtrl">
+    <div class="row">
+       <div>
+           <div class="pull-left btn-sort">
+               <div class="form-group">
+                    <label> Sort By: </label>
+                    <select  ng-model="sortColumn">
+               <!--         <option value="" disabled selected>Sort by</option> -->
+                        <option value="Employee Name">Employee Name</option>
+                        <option value="Age">Age</option>
+                    </select>
+               </div>
+          </div>
+        </div>
+    </div>
+    <div>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td> <a ng-click="orderByField='name'; reverseField=!reverseField">Name</a></td>
+                <td>Birth Date</td>
+                <td> <a ng-click="orderByField='age'; reverseField=!reverseField">Age</a></td>
+                <td>Modify</td>
+                <!--<td>Update</td>-->
+                <td>Delete</td>
+            </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="employee in employees | orderBy: orderByField:reverseField">
+            <td>{{employee.id}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.birthdate | date:'MM/dd/yyyy'}}</td>
+            <td>{{employee.age}}</td> 
+            <td>
+                <a href="#!tab5" ng-click="editBtn(employee)" class="glyphicon glyphicon-pencil"></a>
+            </td>
+            <td>
+                <a ng-click="remove($index)" class="glyphicon glyphicon-remove"></a>
+            </td>
+        </tr>
+            <!--
+                <td>
+                    <div ng-hide="editingData[employee.idd]">{{employee.id}}</div>
+                    <div ng-show="editingData[employee.idd]"><input type="text" ng-model="employee.id" /></div>
+                </td>
+                <td>
+                    <div ng-hide="editingData[employee.idd]">{{employee.name}}</div>
+                    <div ng-show="editingData[employee.idd]"><input type="text" ng-model="employee.name" /></div>
+                </td>
+                <td>
+                    <div ng-hide="editingData[employee.idd]">{{employee.birthdate | date:"MM/dd/yyyy"}}</div>
+                    <div ng-show="editingData[employee.idd]"><input type="date" ng-model="employee.birthdate" /></div>
+                </td>
+                <td>
+                    <div ng-hide="editingData[employee.idd]">{{employee.age}}</div>
+                    <div ng-show="editingData[employee.idd]"><input type="number" ng-model="employee.age" /></div>
+                </td>
+            
+            <td>
+                <a ng-click="modify(employee)" ng-hide="editingData[employee.idd]" class="glyphicon glyphicon-pencil"></a>
+            </td>
+            <td>
+                <a ng-click="update(employee)" ng-show="editingData[employee.idd]" class="glyphicon glyphicon-save"></a>
+            </td>
+            <td>
+                <a ng-click="remove(this)" class="glyphicon glyphicon-remove"></a>
+            </td>
+        </tr> -->
+            
+        </tbody>
+    </table>
+        <button ng-click="goNewForm('tab4')" class="btn btn-default">Add New Employee</button>
+    </div>
+ </div>
